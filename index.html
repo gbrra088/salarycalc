@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<label for="hourlyWage">Hourly Wage: </label>
+    <input type="text" id="hourlyWage"><br><br>
+
+    <!-- Input for hours per week -->
+    <label for="hoursWorked">Hours worked per week: </label>
+    <input type="text" id="hoursWorked"><br><br>
+<button onclick="calculateSalary()">Calculate Salary</button>
+<p>Your Salary: $<span id="salary">0</span></p>
+
+<script>
+function calculateSalary(){
+	var wage = document.getElementById("hourlyWage").value;
+    var hours = document.getElementById("hoursWorked").value;
+    
+    wage = parseFloat(wage);
+    hours = parseFloat(hours);
+    var salary = (wage * hours * 52);
+        document.getElementById("salary").innerHTML=salary;
+
+}
+</script>
+
+</body>
+</html>
